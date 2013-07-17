@@ -4,7 +4,6 @@ gem 'rails', '3.2.13'
 gem 'devise'
 gem 'sqlite3'
 gem 'jquery-rails'
-gem 'faker', '1.1.2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,6 +19,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'faker', '1.1.2'
   gem "rspec-rails", "~> 2.13.2"
   gem "factory_girl_rails", "~> 4.2.1"
   gem "shoulda-matchers", "~> 2.2.0"
@@ -28,6 +28,10 @@ end
 
 group :development do
   gem 'better_errors'
+end
+
+group :test do
+  gem "capybara"
 end
 
 
