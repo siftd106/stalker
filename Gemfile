@@ -6,14 +6,12 @@ gem 'sqlite3'
 gem 'jquery-rails'
 gem 'turbolinks'
 
-# Gems used only for assets and not required
-# in production environments by default.
 gem 'sass-rails',   '~> 4.0.0'
-gem "bootstrap-sass-rails", "~> 3.0.0.0.rc1"
 gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem "bootstrap-sass-rails", "~> 3.0.0.0.rc1"
+
 gem 'therubyracer', :platforms => :ruby
 
 group :development, :test do
@@ -31,19 +29,3 @@ end
 group :test do
   gem "capybara"
 end
-
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
