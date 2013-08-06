@@ -4,6 +4,7 @@ gem 'rails', '4.0.0'
 gem 'devise'
 gem 'sqlite3'
 gem 'jquery-rails'
+gem 'turbolinks'
 
 # Gems used only for assets and not required
 # in production environments by default.
