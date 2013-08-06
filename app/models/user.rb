@@ -11,6 +11,4 @@ class User < ActiveRecord::Base
   has_many :tags, through: :tagships
 
   belongs_to :user_type
-
-  scope :students
 end
