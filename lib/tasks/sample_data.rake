@@ -1,6 +1,11 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
+    return if Rails.env.production?
+
+    User.destroy_all
+    Course.destroy_all
+
     User.create!(first_name: "Example",
                  last_name: "User",
                  email: "example@example.org",
@@ -17,5 +22,10 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
+
+    10.times do
+      Course.create(description: Faker::Lorem.words(3).join(' ') )
+    end
+
   end
 end

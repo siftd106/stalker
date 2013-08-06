@@ -1,0 +1,15 @@
+HOME PAGE
+
+<h1>Students</h1>
+<ul>
+  <% @students.each do |student| %>
+    <li><%= student.full_name %></li>
+  <% end %>
+</ul>
+
+<h1>Courses</h1>
+<ul>
+  <% @courses.each do |course| %>
+    <li><%= course.description %></li>
+  <% end %>
+</ul>

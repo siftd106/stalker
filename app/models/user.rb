@@ -13,8 +13,13 @@ class User < ActiveRecord::Base
   has_many :courses, through: :enrollments
   has_many :tagships
   has_many :tags, through: :tagships
-
-  belongs_to :user_type
+  has_many :roles
+  has_many :roles, through: :user_roles
 
   scope :students
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
 end
