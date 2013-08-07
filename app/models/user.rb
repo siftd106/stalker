@@ -5,10 +5,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :phone
-  # attr_accessible :title, :body
-
   has_many :enrollments
   has_many :courses, through: :enrollments
   has_many :tagships
@@ -21,5 +17,4 @@ class User < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}"
   end
-
 end
