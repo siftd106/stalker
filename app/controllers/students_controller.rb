@@ -1,4 +1,10 @@
 class StudentsController < ApplicationController
-	def index
-	end
+  def index
+    @students = User.students
+  end
+
+  def show
+    @student = User.students.find(params[:id])
+  end
+
 end
