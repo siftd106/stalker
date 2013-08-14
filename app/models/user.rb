@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   has_many :roles
   has_many :roles, through: :user_roles
 
+  scope :students, -> {}
+
   def full_name
     "#{first_name} #{last_name}"
   end
