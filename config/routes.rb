@@ -3,6 +3,8 @@ Stalker::Application.routes.draw do
 
   root to: 'pages#index'
 
-  resources :pages, only: :index
-  resources :students, :only => [:index]
+  resources :students, :only => [:index, :show]
+
+  resources :courses, :only => [:index, :show]
+
 end
