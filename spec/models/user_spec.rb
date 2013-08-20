@@ -12,6 +12,6 @@ describe User do
   it { should have_many(:courses).through(:enrollments) }
   it { should have_many :tagships }
   it { should have_many(:tags).through(:tagships) }
-
-  it { should belong_to :user_type }
+  it { should have_many(:roleships) }
+  it { should have_many(:roles).through(:roleships) }
 end

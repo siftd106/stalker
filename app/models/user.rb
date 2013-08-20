@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   has_many :courses, through: :enrollments
   has_many :tagships
   has_many :tags, through: :tagships
-  has_many :roles
-  has_many :roles, through: :user_roles
+  has_many :roleships
+  has_many :roles, through: :roleships
 
   scope :students, -> {}
 
