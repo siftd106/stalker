@@ -1,7 +1,7 @@
 class Role < ActiveRecord::Base
-  has_many :user_roles
-  has_many :users, through: :user_roles
+  has_many :roleships
+  has_many :users, through: :roleships
 
-  STUDENT = 'student'
-  ADMIN = 'admin'
+  # STUDENT => 'student'
+  # ADMIN = 'admin'
 end

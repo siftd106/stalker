@@ -1,5 +1,6 @@
 require 'spec_helper'
 
-describe UserType do
-  it { should have_many :users }
+describe Role do
+  it { should have_many(:roleships) }
+  it { should have_many(:users).through(:roleships) }
 end
