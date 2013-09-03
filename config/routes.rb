@@ -7,5 +7,5 @@ Stalker::Application.routes.draw do
 
   resources :students, :only => [:index, :show]
 
-  resources :courses, :only => [:index, :show]
+  resources :courses
 end

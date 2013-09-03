@@ -7,4 +7,5 @@ describe Course do
   
   it { should have_many :enrollments }
   it { should have_many(:users).through(:enrollments) }
+
 end
