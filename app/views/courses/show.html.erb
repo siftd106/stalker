@@ -1,4 +1,4 @@
 <p><%= link_to 'Courses', courses_path %></p>
 
 <h1><%= @course.description %></h1>
-<p>Start date: <%= @course.start_date %></p>
+<p>Start date: <%= @course.start_date.to_date.to_formatted_s(:long) %></p>
