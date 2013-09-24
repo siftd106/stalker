@@ -1,5 +1,14 @@
 <%= form_for(@course) do |f| %>
 
+  <% if @course.errors.any? %>
+    <p>Warning: <%= pluralize(@course.errors.count, 'error') %></p>
+    <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <div class="field">
   	<%= f.label :description %><br>
   	<%= f.text_field :description %>
