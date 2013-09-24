@@ -8,4 +8,6 @@ Stalker::Application.routes.draw do
   resources :students, :only => [:index, :show]
 
   resources :courses
+
+  resources :enrollments, :only => [:new, :create]
 end
