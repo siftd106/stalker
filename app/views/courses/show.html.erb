@@ -2,3 +2,13 @@
 
 <h1><%= @course.description %></h1>
 <p>Start date: <%= @course.start_date.to_date.to_formatted_s(:long) %></p>
+<h2>Students in this course:</h2>
+	<% if @course.users.any? %>
+		<ol>
+		<% @course.users.each do |user| %>
+			<li><%= "#{user.first_name} #{user.last_name}" %></li>
+		<% end %>
+		</ol>
+	<% else %>
+		<p>No students assigned to this course.</p>
+	<% end %>
