@@ -6,24 +6,36 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body bgcolor=#0066CC >
-  <div class='navbar navbar-inverse navbar-fixed-top'>
-    <div class='container'>
-      <a class='navbar-brand' href=<%= root_path %>>Home</a>
-      <ul class='nav navbar-nav pull-right'>
-        <li>
-          <a href=<%= students_path %>>Students</a>
-        </li>
-        <li>
-          <a href=<%= courses_path %>>Courses</a>
-        </li>
-        <li>
-          <a href='#'>Logout</a>
-        </li>
-      </ul>
+<body>
+  <header role="banner">
+    <div class='navbar navbar-inverse'>
+      <div class='container'>
+        <h1 class="logo"><a class='navbar-brand' href=<%= pages_path %>>Stalker</a></h1>
+        <ul class='nav navbar-nav pull-right'>
+          <li>
+            <a href='#'>Logout</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </header>
+
+  <div id="main-content" class="container">
+    <main class="content" itemprop="mainContentOfPage" role="main">
+      <%= yield %>
+    </main>
   </div>
-<%= yield %>
+
+  <footer>
+    <div id="footer-content" class="container">
+      <% current_year = Time.now.year %>
+      <p class="credits">Copyright &copy; 2013
+        <% if current_year > 2013 %>
+          <%= " - " + current_year %>
+        <% end %>
+         The Factory</p>
+    </div>
+  </footer>
 
 </body>
 </html>
