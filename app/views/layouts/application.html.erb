@@ -28,13 +28,10 @@
 
   <footer>
     <div id="footer-content" class="container">
-      <% currentDate = Time.new %>
-      <%= puts "currentDate.year is: "
-      puts currentDate.year %>
+      <% current_year = Time.now.year %>
       <p class="credits">Copyright &copy; 2013
-        <% if currentDate.year >= 2013 %>
-          <% currentDate = " - " + currentDate.year.to_s %>
-          <%= currentDate %>
+        <% if current_year > 2013 %>
+          <%= " - " + current_year %>
         <% end %>
          The Factory</p>
     </div>
