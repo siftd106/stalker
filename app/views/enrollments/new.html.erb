@@ -1,1 +1,11 @@
-new enrollment
+<h1>Add Existing coLearner</h1>
+
+<%= form_for(@enrollment) do |f| %>
+<p><%= f.select(:user_id, 
+						 options_from_collection_for_select(eligible_students(@course),
+						 																		:id,
+						 																		:sortable_full_name),
+						{prompt: 'Select a coLearner'}) %></p>
+<p><%= f.submit "Add coLearner to Class" %></p>
+<%= f.hidden_field :course_id %>
+<% end %>
