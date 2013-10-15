@@ -5,5 +5,8 @@ class Course < ActiveRecord::Base
   has_many :enrollments
   has_many :users, through: :enrollments
 
+	def eligible_students
+		User.students.all(:order => :last_name) - self.users
+	end
 
 end
