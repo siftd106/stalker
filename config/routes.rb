@@ -7,7 +7,11 @@ Stalker::Application.routes.draw do
 
   resources :students, :only => [:index, :show]
 
-  resources :courses
+  resources :courses do
+    get 'remove_enrollment' => 'courses#remove_enrollment'
+    delete 'destroy_enrollment' => 'courses#destroy_enrollment'
+  end
 
   resources :enrollments, :only => [:new, :create]
+
 end

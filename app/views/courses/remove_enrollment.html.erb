@@ -1,0 +1,11 @@
+<h1>Remove coLearner from Course</h1>
+
+<%= form_for(@enrollment, url: course_destroy_enrollment_path(course_id: @course.id), method: :delete) do |f| %>
+<p><%= f.select(:user_id, 
+						 options_from_collection_for_select(@course.users,
+						 																		:id,
+						 																		:sortable_full_name),
+						{prompt: 'Select a coLearner'}) %></p>
+<p><%= f.submit "Remove coLearner from Course", class: "btn btn-primary" %></p>
+<%= f.hidden_field :course_id %>
+<% end %>

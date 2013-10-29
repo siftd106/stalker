@@ -16,6 +16,22 @@ class CoursesController < ApplicationController
 			render action: "new"
 		end
 	end
+
+	def remove_enrollment
+		@course = Course.find(params[:course_id])
+		@enrollment = Enrollment.new(:course => @course)
+	end	
+
+	def destroy_enrollment
+		enrollment = Enrollment.find_by(course_id: params[:enrollment][:course_id],
+																		 user_id: params[:enrollment][:user_id])
+		@course = Course.find(params[:course_id])
+		if enrollment.destroy
+			redirect_to(course_path(:id => @course.id))
+		else
+			redirect_to(course_path(:id => @course.id))
+		end
+	end
 	
 	private
     def course_params
