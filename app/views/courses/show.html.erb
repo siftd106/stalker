@@ -1,11 +1,11 @@
 <p><%= link_to 'Courses', courses_path %></p>
 <p>
-	<%= link_to "Add Existing Student to Course", new_enrollment_path(:course_id => @course.id), class: "btn btn-primary" %>
+	<%= link_to "Add Existing coLearner to Course", new_enrollment_path(:course_id => @course.id), class: "btn btn-primary" %>
 </p>
 
 <h1><%= @course.description %></h1>
 <p>Start date: <%= @course.start_date.to_date.to_formatted_s(:long) %></p>
-<h2>Students in this course:</h2>
+<h2>coLearners in this course:</h2>
 	<% if @course.users.any? %>
 		<ol>
 		<% @course.users.each do |user| %>
