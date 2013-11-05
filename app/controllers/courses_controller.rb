@@ -17,6 +17,18 @@ class CoursesController < ApplicationController
 		end
 	end
 
+	def edit
+		@course = Course.find(params[:id])
+	end
+
+	def update
+		@course = Course.find(params[:id])
+		if @course.update(course_params)
+			redirect_to(course_path, notice: "Course was successfully updated.")
+		else
+		end
+	end
+
 	def remove_enrollment
 		@course = Course.find(params[:course_id])
 		@enrollment = Enrollment.new(:course => @course)

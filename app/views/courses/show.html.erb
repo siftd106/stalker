@@ -5,6 +5,9 @@
 <p>
 	<%= link_to "Remove Existing coLearner from Course", course_remove_enrollment_path(:course_id => @course.id), class: "btn btn-primary" %>
 </p>
+<p>
+	 <%= link_to "Edit this Course", edit_course_path(:id =>@course.id), class: "btn btn-primary" %>
+</p>
 
 <h1><%= @course.description %></h1>
 <p>Start date: <%= @course.start_date.to_date.to_formatted_s(:long) %></p>
