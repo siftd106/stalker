@@ -26,8 +26,10 @@ class CoursesController < ApplicationController
 		@course = Course.find(params[:id])
 		if @course.update(course_params)
 			flash[:success] = "Course successfully updated!"
-			redirect_to(course_path)
+			redirect_to(course_path(id: @course.id))
 		else
+			flash.now[:danger] = "Error - course was not updated!"
+			render "edit"
 		end
 	end
 
