@@ -28,6 +28,9 @@
 
   <div id="main-content" class="container">
     <main class="content" itemprop="mainContentOfPage" role="main">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:p, value, class: "alert alert-#{key}") %>
+      <% end %>
       <%= yield %>
     </main>
   </div>
