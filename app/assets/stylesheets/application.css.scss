@@ -9,10 +9,54 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require twitter/bootstrap
- *= require_self
  *= require_tree .
+ *= require_self
  */
 
-body{
-  padding-top: 70px;
+
+/***   Custom CSS Below   ***/
+
+.logo {
+	height: 82px;
+	margin: 0.5em 0 0;
+	padding: 0;
+	width: 425px;
+}
+
+.navbar-brand {
+	background: url(/assets/logo-stalker.png) no-repeat 0 0 transparent;	font-size: 2.25em;
+	line-height: 1;
+	margin: 0;
+	padding: 0 0 0 145px;
+}
+
+.navbar-nav.pull-right {
+	float: right;
+	width: 60%;
+}
+
+.navbar-nav > li {
+	float: right;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+	color: #BBBBBB;
+}
+
+#main-content.container {
+		margin: 0 auto 2.5em;
+}
+
+footer {
+	background-color: #000;
+	color: #BBBBBB; 
+}
+
+#footer-content {
+	padding: 1em 0;
+}
+
+#footer-content p {
+	margin: 0;
+	text-align: center;
 }
